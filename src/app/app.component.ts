@@ -40,31 +40,7 @@ class Dialog {
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-<<<<<<< HEAD
-    me: User = new User('Me', '/assets/img/anon.jpeg');
 
-    users: User[] = [
-        {nickname: 'Vasya', photo: '/assets/img/vasya.jpg'},
-        {nickname: 'Julia', photo: '/assets/img/julia.jpg'},
-        {nickname: 'John', photo: '/assets/img/john.jpg'},
-        {nickname: 'Котик', photo: '/assets/img/kotyk.jpg'}
-    ];
-
-    loadMessages(i: number){
-        let res = [];
-        let item = JSON.parse(localStorage.getItem('dialogs[' + i + '].messages'));
-        if(item) res = item;
-        return res;
-    };
-
-    dialogs: Dialog[] = [
-        {user1: this.me, user2: this.users[0], 
-            messages: [
-                {time: new Date("2020-10-24").toISOString(), text: 'Privet', user_from: this.users[0]},
-                {time: new Date("2020-10-24").toISOString(), text: 'Privet', user_from: this.me},
-                {time: new Date("2020-10-27").toISOString(), text: 'George Thorogood was inspired by Chuck Norris, when he composed "Bad to the Bone".', user_from: this.users[0]}
-            ].concat(this.loadMessages(0))
-=======
   me: User = new User("Me", "https://icon-library.com/images/anonymous-user-icon/anonymous-user-icon-2.jpg");
 
   users: User[] = [
@@ -90,7 +66,6 @@ export class AppComponent {
           time: new Date("2020-10-24").toISOString(),
           text: "Privet",
           user_from: this.users[0]
->>>>>>> 3e4910fcd1f3c8a8a09212650b896cb9744765f6
         },
         {
           time: new Date("2020-10-24").toISOString(),
