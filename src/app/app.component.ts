@@ -49,7 +49,7 @@ export class AppComponent {
     me: User = new User('Me', '/assets/img/anon.jpeg');
 
     users: User[] = [
-        {nickname: 'Vasya', photo: '/assets/img/ivan.jpg'},
+        {nickname: 'Vasya', photo: '/assets/img/vasya.jpg'},
         {nickname: 'Julia', photo: '/assets/img/julia.jpg'},
         {nickname: 'John', photo: '/assets/img/john.jpg'},
         {nickname: 'Котик', photo: '/assets/img/kotyk.jpg'}
