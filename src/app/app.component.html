@@ -1,49 +1,47 @@
 <div class="blockusers">
-  <div class="findform">
-    <img class="photo" src="{{ me.photo }}">
-    <ng-select on-focusout="findout()" (change)="currentUser(findUser)" [items]="users"
-                   bindLabel="nickname"
-                   placeholder="Search or start new chat"
-                   [(ngModel)]="findUser"
-                   labelForId="city" 
-                   class="findInput">
-        </ng-select>
-  </div>
-      <table class="users">
-      <h2> Chats </h2>
-          <tr *ngFor = "let d of sortedDialogs()" (click)="currentUser(d.user2)" class="row">
-              <td><img class="photo" src="{{ d.user2.photo }}"></td>
-              <td><b class="user">{{ d.user2.nickname }}</b><br>
+	<div class="findform">
+		<img class="photo" src="{{ me.photo }}">
+		<ng-select on-focusout="findout()" (change)="currentUser(findUser)" [items]="users" bindLabel="nickname"
+			placeholder="Search or start new chat" [(ngModel)]="findUser" labelForId="city" class="findInput">
+		</ng-select>
+	</div>
+	<table class="users">
+		<h2> Chats </h2>
+		<tr *ngFor="let d of sortedDialogs()" (click)="currentUser(d.user2)" class="row">
+			<td><img class="photo" src="{{ d.user2.photo }}"></td>
+			<td><b class="user">{{ d.user2.nickname }}</b><br>
               {{ d.messages[d.messages.length - 1].text.substring(0, 70) }}</td>
-              <td class="date">{{ d.messages[d.messages.length - 1].time.substring(0, 10) }}</td>
-          </tr>
-      </table>      
-  </div>
-  
-  <div class="blockmessages">
-      <div class="currentUser">
-          <table>
-              <tr>
-                  <td><img class="photo" src="{{ currUser.photo }}"></td>
-                  <td>{{ currUser.nickname }}</td>
-               </tr>
-            </table>
-      </div>
-      <div class ="m">
-      <table class="messages" *ngFor="let m of currDialog" >
-          <tr>
-              <td *ngIf="m.user_from.nickname != 'Me'" class="dialogphoto"><img class="photo" src="{{ m.user_from.photo }}"></td>
-              <td [ngClass]="{'my_message' : m.user_from.nickname == 'Me', 'message': m.user_from.nickname != 'Me'}">
-              {{ m.text }}</td> 
-          </tr>
-          <tr>
-            <td colspan="2" [ngClass]="{'my_time' : m.user_from.nickname == 'Me', 'time': m.user_from.nickname != 'Me'}">
-                {{ m.time.substring(0, 10) + ' ' + m.time.substring(11, 19)}}</td>
-          </tr>
-      </table>
-      </div>
-      <div class="sendForm">
-          <input class="sendInput" [(ngModel)]="message" placeholder="Type your message">
-          <button class="sendBtn" (click)="sendMessage(message)"><img src="/assets/img/sendButton.png" class="sendImg"></button>
-      </div>
-  </div>
+			<td class="date">{{ d.messages[d.messages.length - 1].time.substring(0, 10) }}</td>
+		</tr>
+	</table>
+</div>
+
+<div class="blockmessages">
+	<div class="currentUser">
+		<table>
+			<tr>
+				<td><img class="photo" src="{{ currUser.photo }}"></td>
+				<td>{{ currUser.nickname }}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="m">
+		<table class="messages" *ngFor="let m of currDialog">
+			<tr>
+				<td *ngIf="m.user_from.nickname != 'Me'" class="dialogphoto">
+					<img class="photo" src="{{ m.user_from.photo }}"></td>
+				<td [ngClass]="{'my_message' : m.user_from.nickname == 'Me', 'message': m.user_from.nickname != 'Me'}">
+					{{ m.text }}</td>
+			</tr>
+			<tr>
+				<td colspan="2"
+					[ngClass]="{'my_time' : m.user_from.nickname == 'Me', 'time': m.user_from.nickname != 'Me'}">
+					{{ m.time.substring(0, 10) + ' ' + m.time.substring(11, 19)}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="sendForm">
+		<input class="sendInput" [(ngModel)]="message" placeholder="Type your message">
+		<button class="sendBtn" (click)="sendMessage(message)"><img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/send-message-6-663814.png" class="sendImg"></button>
+	</div>
+</div>
