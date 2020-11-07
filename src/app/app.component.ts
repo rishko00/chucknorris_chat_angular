@@ -40,13 +40,13 @@ class Dialog {
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  me: User = new User("Me", "/assets/img/anon.jpeg");
+  me: User = new User("Me", "https://icon-library.com/images/anonymous-user-icon/anonymous-user-icon-2.jpg");
 
   users: User[] = [
-    { nickname: "Vasya", photo: "/assets/img/ivan.jpg" },
-    { nickname: "Julia", photo: "/assets/img/julia.jpg" },
-    { nickname: "John", photo: "/assets/img/john.jpg" },
-    { nickname: "Котик", photo: "/assets/img/kotyk.jpg" }
+    { nickname: "Vasya", photo: "https://p1.hiclipart.com/preview/875/665/299/hospital-watercolor-paint-wet-ink-avatar-person-man-user-profile-png-clipart.jpg" },
+    { nickname: "Julia", photo: "https://p1.hiclipart.com/preview/812/807/813/businessperson-avatar-user-profile-business-administration-watercolor-paint-wet-ink-marketing-blog-cartoon-smile-png-clipart.jpg" },
+    { nickname: "John", photo: "https://p1.hiclipart.com/preview/779/305/262/web-design-watercolor-paint-wet-ink-avatar-business-businessperson-user-profile-png-clipart.jpg" },
+    { nickname: "Котик", photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgJdj-GFdQJKq3kMHu1p5RYb1dA2BIWItRiA&usqp=CAU" }
   ];
 
   loadMessages(i: number) {
@@ -140,7 +140,7 @@ export class AppComponent {
   }
 
   findDialog: Dialog[] = this.dialogs;
-  currUser: User = new User("", "/assets/img/anon.jpeg");
+  currUser: User = new User("", "https://icon-library.com/images/anonymous-user-icon/anonymous-user-icon-2.jpg");
   currDialog: Message[];
   message: string;
   findUser: User;
